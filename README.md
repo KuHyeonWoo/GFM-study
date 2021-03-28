@@ -1,1 +1,5 @@
-# GFM-study
+# 확장구문
+
+| abc | defghi |
+:-: | -----------:
+bar | baz
