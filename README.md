@@ -92,6 +92,7 @@
 >~~The world is flat.~~ We now know that the world is round.
 
 ## 4. 자동 링크
+대괄호를 사용하지 않았더라도 자동으로 URL을 링크로 변환합니다. 자동 링크는 줄의 시작, 공백 후, 구분 문자(*,_,~,() 다음에 와야 인식됩니다. 
 
 www.commonmark.org
 
