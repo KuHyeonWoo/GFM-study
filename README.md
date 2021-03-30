@@ -39,7 +39,7 @@
 >
 >bar
 
-헤더 행과 구분 행은 셀의 수가 같아야 합니다. 그렇지 않으면 표로 인시되지 않습니다.
+헤더 행과 구분 행은 셀의 수가 같아야 합니다. 그렇지 않으면 표로 인식되지 않습니다.
 
     | abc | def |
     | --- |
@@ -90,3 +90,33 @@
     ~~The world is flat.~~ We now know that the world is round.
 
 >~~The world is flat.~~ We now know that the world is round.
+
+## 4. 자동 링크
+
+www.commonmark.org
+
+Visit www.commonmark.org/help for more information.
+
+Visit www.commonmark.org.
+
+Visit www.commonmark.org/a.b.
+
+www.google.com/search?q=Markup+(business)
+
+www.google.com/search?q=Markup+(business)))
+
+(www.google.com/search?q=Markup+(business))
+
+(www.google.com/search?q=Markup+(business)
+
+www.google.com/search?q=(business))+ok
+
+www.google.com/search?q=commonmark&hl=en
+
+www.google.com/search?q=commonmark&hl;
+
+www.commonmark.org/he<lp
+
+http://commonmark.org
+
+(Visit https://encrypted.google.com/search?q=Markup+(business))
