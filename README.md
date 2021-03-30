@@ -113,6 +113,7 @@
 >Visit www.commonmark.org/a.b.
 
 자동 링크가 )로 끝났면, 자동 링크에 괄호가 몇 개 있는지 확인을 하여, 닫힌 괄호가 열린 괄호보다 많으면 마지막 닫힌 괄호는 자동 링크에 포함하지 않습니다.
+    
     www.google.com/search?q=Markup+(business)
     
     www.google.com/search?q=Markup+(business)))
@@ -156,11 +157,47 @@
 >
 >hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
 
-a.b-c_d@a.b
+-, _, . 중에서 .만 이메일 뒤에 올 수 있습니다. 이 .은 이메일에 포함되지 않습니다.
 
-a.b-c_d@a.b.
+    a.b-c_d@a.b
+    
+    a.b-c_d@a.b.
+    
+    a.b-c_d@a.b-
+    
+    a.b-c_d@a.b_
 
-a.b-c_d@a.b-
+>a.b-c_d@a.b
+>
+>a.b-c_d@a.b.
+>
+>a.b-c_d@a.b-
+>
+>a.b-c_d@a.b_
 
-a.b-c_d@a.b_
+## 5. 허용되지 않는 HTML
+HTML 출력을 할 때 다음 HTML 태그들은 필터링 됩니다.
 
+- <title>
+- <textarea>
+- <style>
+- <xmp>
+- <iframe>
+- <noembed>
+- <noframes>
+- <script>
+- <plaintext>
+ 
+필터링은 `<`을 `&lt;`로 대체하면서 이루어집니다.
+
+    <strong> <title> <style> <em>
+    
+    <blockquote>
+        <xmp> is disallowed.  <XMP> is also disallowed.
+    </blockquote>
+
+><strong> <title> <style> <em>
+>
+><blockquote>
+>   <xmp> is disallowed.  <XMP> is also disallowed.
+></blockquote>
