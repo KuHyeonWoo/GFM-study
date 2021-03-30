@@ -156,9 +156,9 @@
 - @ 기호 하나
 - 마침표(.)로 나뉘어진 하나 이상의 문자. 영숫자 또는 -, _이어야함. 마침표는 하나 이상 있어야함. 마지막 문자는 -나 _가 아니어야 함.
 
-    foo@bar.baz
-    
-    hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
+	foo@bar.baz
+	
+	hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
 
 >foo@bar.baz
 >
