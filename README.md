@@ -72,3 +72,14 @@
 >- [ ] Update the website
 >- [ ] Contact the media
 
+작업 목록은 중첩될 수 있습니다.
+
+    - [x] foo
+      - [ ] bar
+      - [x] baz
+    - [ ] bim
+
+>- [x] foo
+>  - [ ] bar
+>  - [x] baz
+>- [ ] bim
