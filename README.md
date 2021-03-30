@@ -120,3 +120,5 @@ www.commonmark.org/he<lp
 http://commonmark.org
 
 (Visit https://encrypted.google.com/search?q=Markup+(business))
+
+foo@bar.baz
