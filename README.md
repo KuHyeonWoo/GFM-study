@@ -92,34 +92,75 @@
 >~~The world is flat.~~ We now know that the world is round.
 
 ## 4. 자동 링크
-대괄호를 사용하지 않았더라도 자동으로 URL을 링크로 변환합니다. 자동 링크는 줄의 시작, 공백 후, 구분 문자(*,_,~,() 다음에 와야 인식됩니다. 
+대괄호를 사용하지 않았더라도 자동으로 URL을 링크로 변환합니다. 자동 링크는 줄의 시작, 공백 후, 또는 *, _, ~, ( 와 같은 구분 문자 다음에 와야 인식됩니다.
 
-www.commonmark.org
+`http://`, `https://`, `www.` 다음에 유효한 도메인이 붙으면 이 또한 자동 링크로 인식됩니다. 유효한 도메인은 마침표(.)로 부분이 나뉘며, 영숫자, 밑줄 문자(_), 빼기 기호(-)들로 구성됩니다. 최소한 하나의 마침표가 있어야 하며, 마지막 두 부분에는 밑줄 문자가 없어야 합니다.
 
-Visit www.commonmark.org/help for more information.
+    www.commonmark.org
 
-Visit www.commonmark.org.
+>www.commonmark.org
 
-Visit www.commonmark.org/a.b.
+유효한 도메인 뒤에 0개 이상의, 공백이 아니면서 <가 아닌 문자가 올 수 있습니다.
 
-www.google.com/search?q=Markup+(business)
+    Visit www.commonmark.org/help for more information.
 
-www.google.com/search?q=Markup+(business)))
+>Visit www.commonmark.org/help for more information.
 
-(www.google.com/search?q=Markup+(business))
+후행 구두점(특히 ?, !, ., ,, ;, *, _, -, ~)은 자동 링크에 포함되지 않습니다.
 
-(www.google.com/search?q=Markup+(business)
+    Visit www.commonmark.org/a.b.
 
-www.google.com/search?q=(business))+ok
+>Visit www.commonmark.org/a.b.
 
-www.google.com/search?q=commonmark&hl=en
+자동 링크가 )로 끝났면, 자동 링크에 괄호가 몇 개 있는지 확인을 하여, 닫힌 괄호가 열린 괄호보다 많으면 마지막 닫힌 괄호는 자동 링크에 포함하지 않습니다.
+    www.google.com/search?q=Markup+(business)
+    
+    www.google.com/search?q=Markup+(business)))
+    
+    (www.google.com/search?q=Markup+(business))
+    
+    (www.google.com/search?q=Markup+(business)
 
-www.google.com/search?q=commonmark&hl;
+>www.google.com/search?q=Markup+(business)
+>
+>www.google.com/search?q=Markup+(business)))
+>
+>(www.google.com/search?q=Markup+(business))
+>
+>(www.google.com/search?q=Markup+(business)
 
-www.commonmark.org/he<lp
+세미콜론(;)이 자동링크 끝에 오고, 선행하는 텍스트가 &와 1개 이상의 영숫자이면, 이는 자동 링크에서 제외됩니다.
 
-http://commonmark.org
+    www.google.com/search?q=commonmark&hl;
 
-(Visit https://encrypted.google.com/search?q=Markup+(business))
+>www.google.com/search?q=commonmark&hl;
 
-foo@bar.baz
+<가 오면 바로 링크가 끝납니다.
+
+    www.commonmark.org/he<lp
+
+>www.commonmark.org/he<lp
+
+### 확장된 이메일 자동 링크
+이메일도 자동으로 링크로 인식됩니다. 이메일은 형식을 만족해야 합니다.
+
+- 하나 이상의 문자. 영숫자 또는 ., -, _, + 이어야함
+- @ 기호 하나
+- 마침표(.)로 나뉘어진 하나 이상의 문자. 영숫자 또는 -, _이어야함. 마침표는 하나 이상 있어야함. 마지막 문자는 -나 _가 아니어야 함.
+
+    foo@bar.baz
+    
+    hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
+
+>foo@bar.baz
+>
+>hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
+
+a.b-c_d@a.b
+
+a.b-c_d@a.b.
+
+a.b-c_d@a.b-
+
+a.b-c_d@a.b_
+
