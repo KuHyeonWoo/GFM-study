@@ -60,3 +60,15 @@
 >| --- | --- |
 >| bar |
 >| bar | baz | boo |
+
+## 2. 작업 목록
+작업 목록을 사용하면 확인란이있는 항목 목록을 만들 수 있습니다. 작업 목록을 지원하는 Markdown 응용 프로그램에서는 콘텐츠 옆에 확인란이 표시됩니다. 작업 목록을 만들려면 작업 목록 항목 앞에 대시(-) 및 공백이있는 대괄호([ ])를 추가합니다. 확인란을 체크하려면 대괄호 사이에 x 기호를 추가합니다([x]).
+
+    - [x] Write the press release
+    - [ ] Update the website
+    - [ ] Contact the media
+
+>- [x] Write the press release
+>- [ ] Update the website
+>- [ ] Contact the media
+
