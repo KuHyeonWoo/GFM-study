@@ -83,3 +83,10 @@
 >   - [ ] bar
 >   - [x] baz
 >- [ ] bim
+
+## 3. 취소선
+단어의 가운데에 수평선을 넣어 취소할 수 있습니다. 단어를 취소하려면 단어 앞뒤에 두 개의 물결 기호(~~)를 사용합니다.
+
+    ~~The world is flat.~~ We now know that the world is round.
+
+>~~The world is flat.~~ We now know that the world is round.
