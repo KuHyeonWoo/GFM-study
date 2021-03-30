@@ -13,24 +13,31 @@
 >| git status | List all new or modified files |
 >| git diff | Show file differences that haven't been staged |
 
+표의 범위는 빈 줄이나 다른 블록 수준 요소의 시작에서 끝이 납니다.
 
----
-| f\|oo  |
-| ------ |
-| b `\|` az |
-| b **\|** im |
+    | abc | def |
+    | --- | --- |
+    | bar | baz |
+    > bar
+    
+    | abc | def |
+    | --- | --- |
+    | bar | baz |
+    bar
+    
+    bar
 
-| abc | def |
-| --- | --- |
-| bar | baz |
-> bar
-
-| abc | def |
-| --- | --- |
-| bar | baz |
-bar
-
-bar
+>| abc | def |
+>| --- | --- |
+>| bar | baz |
+>> bar
+>
+>| abc | def |
+>| --- | --- |
+>| bar | baz |
+>bar
+>
+>bar
 
 | abc | def |
 | --- |
